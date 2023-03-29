@@ -102,7 +102,6 @@ h1 {
 
 .title {
     width: 46%;
-    margin-left: 10px
 }
 
 .titlebox p {
@@ -125,3 +124,40 @@ h1 {
         left: 35%;
     }
 }
+
+@media screen and (max-width:992px) {
+    .titlebox {
+        flex-flow:column;
+        font-size:1.6rem;
+        justify-content: unset;
+        gap:5px;
+        overflow: hidden;
+    }
+
+    .titlebox p {
+        margin:0;
+        width: 100%;
+        font-size:0.8rem;
+    }
+
+    .title {
+        width: 100%;
+        
+    }
+
+    
+
+}
+
+@media screen and (max-width:550px) {
+    .titlebox p {
+        display:none;
+    }
+
+
+.titlebox {
+    flex-flow:row;
+    justify-content: center;
+    text-align: center;
+    height: 25%;
+}}
