@@ -43,15 +43,19 @@ createApp({
             this.activeIndex === 0 ? this.activeIndex = this.images.length - 1 : this.activeIndex--
         },
         checkStray() {
-            if (this.activeIndex == this.images.findIndex(image => {
+            if (this.activeIndex === this.images.findIndex(image => {
                 return image.title === "Stray";
             })) {
-                this.meowEffect.play();
-                setTimeout(this.checkStray, 15000);
-
+                if (!this.isPlayed) {//Riproduci solo una volta il miagolio per volta in cui la condizione è riscontrata vera
+                    this.meowEffect.play();
+                    this.isPlayed = true;//Riprodotto
+                }
             } else {
-                setTimeout(this.checkStray, 100);
+                this.isPlayed = false;//Slide cambiata, non più riprodotto
             }
+            setTimeout(() => {
+                this.checkStray();//Ricontrolla la condizione ogni 100ms
+            }, 100);
         }
     },
     mounted() {
