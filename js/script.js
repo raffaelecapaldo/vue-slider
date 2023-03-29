@@ -1,5 +1,4 @@
 const { createApp } = Vue
-
 createApp({
     data() {
         return {
@@ -30,7 +29,6 @@ createApp({
             meowEffect: new Audio('sounds/stray.mp3')
         }
     },
-
     methods: {
         autoplay() {
             this.timer = setInterval(this.goNext, 2000); //Assegno all'autoplay il timer alla costante
@@ -44,24 +42,20 @@ createApp({
         goPrev() {
             this.activeIndex === 0 ? this.activeIndex = this.images.length - 1 : this.activeIndex--
         },
-        checkStray() {//BONUS MEOW
+        checkStray() {
             if (this.activeIndex == this.images.findIndex(image => {
                 return image.title === "Stray";
-            })) { //Vai a pescare qual è l'indice dell'array quando troviamo un oggetto image col title "Stray", confrontiamo l'indice con currentIndex, se corrisponde:
-                this.meowEffect.play(); // riproduci il suono
-                setTimeout(this.checkStray, 15000);// riproduci il suono tra altri 15 secondi se rimani fermo sulla foto, permetti di riprodurre di nuovo il suono soltanto
-                // dopo 15sec se ritorni sulla foto da altra posizione
+            })) {
+                this.meowEffect.play();
+                setTimeout(this.checkStray, 15000);
+
             } else {
-                setTimeout(this.checkStray, 100); // ogni 100 secondi che l'incide non corrisponde, richiama la funzione
+                setTimeout(this.checkStray, 100);
             }
         }
-
-
     },
     mounted() {
         this.autoplay();
         this.checkStray();
     }
-
-
 }).mount(".mycontainer")
