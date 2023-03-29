@@ -37,6 +37,7 @@ h1 {
     height: 100px;
     object-fit: cover;
     object-position: center;
+    cursor: pointer;
 }
 
 .thumbs-button {

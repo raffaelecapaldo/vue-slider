@@ -41,7 +41,7 @@
                         class="fa-solid fa-circle-arrow-down"></i></button>
             </div>
             <div class="thumbs d-flex flex-column" id="thumbs" v-for="(image,index) in images" :key="index">
-                <img class="image-slide" :class="{ active: activeIndex === index }" :src="image.image"
+                <img @click="activeIndex = index" class="image-slide" :class="{ active: activeIndex === index }" :src="image.image"
                     :alt="image.title">
             </div>
         </div>
