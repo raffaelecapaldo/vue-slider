@@ -31,7 +31,7 @@ createApp({
     },
     methods: {
         autoplay() {
-            this.timer = setInterval(this.goNext, 2000); //Assegno all'autoplay il timer alla costante
+            this.timer = setInterval(this.goNext, 3000); //Assegno all'autoplay il timer alla costante
         },
         stopAutoplay() {
             clearInterval(this.timer);
