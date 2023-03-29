@@ -17,7 +17,7 @@
 <body>
     <h1 class="text-center text-uppercase">Il carosello dei videogiochi</h1>
     <div class="mycontainer mt-5 d-flex justify-content-center align-items-center">
-        <div class="carousel autoplay-zone" id="carousel">
+        <div @mouseover="stopAutoplay" class="carousel autoplay-zone" id="carousel">
 
 
             <div class="slide active">
@@ -33,7 +33,7 @@
             </div>
 
         </div>
-        <div class="thumbs-button autoplay-zone">
+        <div @mouseover="stopAutoplay" class="thumbs-button autoplay-zone">
             <div class="buttons d-flex flex-column">
                 <button @click="goPrev" type="button" id="button-up"><i
                         class="fa-solid fa-circle-arrow-up"></i></button>
