@@ -34,9 +34,11 @@ createApp({
     methods: {
         autoplay() {
             this.timer;
+            console.log("ciao");
         },
         stopAutoplay() {
             clearInterval(this.timer);
+            console.log("stop")
         },
         goNext() {
             if (this.activeIndex === this.images.length - 1) {
