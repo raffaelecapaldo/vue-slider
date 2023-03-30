@@ -26,7 +26,8 @@ createApp({
                 }
             ],
             activeIndex: 0,
-            meowEffect: new Audio('sounds/stray.mp3')
+            meowEffect: new Audio('sounds/stray.mp3'),
+            timer: null
         }
     },
     methods: {
